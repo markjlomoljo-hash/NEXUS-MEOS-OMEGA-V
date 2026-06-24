@@ -1,0 +1,43 @@
+{
+  "version": "ultimate",
+  "nmo_system_profile": {
+    "overhead_token_ceiling": 200,
+    "max_orchestration_depth": 3,
+    "shadow_execution_enabled": true,
+    "shadow_budget_credits": 10.0,
+    "auto_override_generation": true,
+    "enable_federation": false,
+    "dashboard_port": 9500
+  },
+  "model_tracks": [
+    {
+      "id": "ultra-fidelity-model-v3",
+      "cost_per_million_input": 10.00,
+      "cost_per_million_output": 30.00,
+      "capabilities": ["code","reasoning","multilingual"],
+      "priority": 1
+    },
+    {
+      "id": "efficient-subtask-model-v1",
+      "cost_per_million_input": 0.75,
+      "cost_per_million_output": 2.00,
+      "capabilities": ["code","simple_qa"],
+      "priority": 2
+    }
+  ],
+  "validation": {
+    "min_fidelity_score": 0.85,
+    "constraint_similarity_threshold": 0.85
+  },
+  "genome": {
+    "gamma": 2.5,
+    "eta": 0.15,
+    "ucb_alpha": 0.2,
+    "gnn_layers": 2
+  },
+  "learning": {
+    "olympics_interval": 50,
+    "adversarial_interval": 25,
+    "meta_nas_interval": 500
+  }
+}
